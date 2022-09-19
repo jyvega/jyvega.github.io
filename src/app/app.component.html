@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | {{title}}</title>
+
+</head>
+<body>
+<div class="scaffold">
+  <main>
+
+    <div class="container">
+
+      <section class="first-section">
+        <div class="main-card">
+
+          <div class="main-user">
+            <div class="main-img-container">
+              <img class="img-user" src="../assets/images/image-jeremy.png" alt="imagen user">
+            </div>
+            <div class="info-user">
+              <p class="user-title">Report for</p>
+              <p class="user-name">Jeremy Robson</p>
+            </div>
+
+          </div>
+
+          <div class="main-card-details">
+            <div class="details-frequencies">
+              <p class="detail-frequency" (click)="drawCards(frequency.Daily)">Daily</p>
+              <p class="detail-frequency" (click)="drawCards(frequency.Weekly)">Weekly</p>
+              <p class="detail-frequency" (click)="drawCards(frequency.Monthly)">Monthly</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="second-section">
+
+        <div class="card" *ngFor="let c of cards">
+
+          <div class="card-header" style="background-color:{{c.color}}">
+            <div class="card-img">
+              <img src="../assets/images/icon-{{c?.iconHeader}}.svg" alt="activity">
+            </div>
+          </div>
+
+          <div class="card-time">
+            <div class="card-activity">
+              <p class="activity-name">{{c?.activity}}</p>
+              <img class="card-dots" src="../assets/images/icon-ellipsis.svg">
+            </div>
+            <div class="card-hours">
+              <p class="current-hour">{{c?.current}}hrs</p>
+              <p class="previous-hour">Previous - {{c?.previous}}hrs</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Jesús Yanser</a>.
+  </footer>
+</div>
+
+</body>
+
+</html>
